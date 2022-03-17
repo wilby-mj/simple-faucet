@@ -3,13 +3,13 @@ $(document).ready(function() {
 	//////////////////////////////////////////////////////////////////////////////
 	////     INSERT YOUR NODE RPC URL, NETWORK ID AND GAS PRICE HERE        //////
 	//////////////////////////////////////////////////////////////////////////////
-	var rpcURL = "http://your-fancy-node-url:8545";
-	var networkID = 12345;
+	var rpcURL = "https://data-seed-prebsc-1-s1.binance.org:8545/";
+	var networkID = 97;
 	var minGasPrice = 0;
 	//////////////////////////////////////////////////////////////////////////////
 	////     INSERT THE TOKEN AND FAUCET ADDRESS HERE                       //////
 	//////////////////////////////////////////////////////////////////////////////
-	var token_address = '0x0000000000000000000000000000000000000000';
+	var token_address = '0xC9b622b621D57fEf2B077e4850EB7ccA10659be8';
 	var faucet_address = '0x0000000000000000000000000000000000000000';
 	//////////////////////////////////////////////////////////////////////////////
 
@@ -19,7 +19,7 @@ $(document).ready(function() {
 	var contract_token;
 	var contract_faucet;
 
-	var balanceETH = 0;
+	var balanceBNB = 0;
 	var balanceToken = 0;
 
 	function initialize() {
@@ -37,9 +37,9 @@ $(document).ready(function() {
 				$("#address").text(account);
 				web3.eth.getBalance(account, function(err, res) {
 					if(!err) {
-						balanceETH = Number(web3.fromWei(res, 'ether'));
-						$('#balanceETH').text(balanceETH + " ETH");
-						$('#balanceETH').show();
+						balanceBNB = Number(web3.fromWei(res, 'ether'));
+						$('#balanceBNB').text(balanceBNB + " BNB");
+						$('#balanceBNB').show();
 					}
 				});
 			} 
